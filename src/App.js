@@ -3,7 +3,7 @@ import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react';
 import { useState } from 'react';
 
-const API_KEY = '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';
+const API_KEY = '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';
 
 function App() {
   const [typing, setTyping] = useState(false);
@@ -44,7 +44,7 @@ function App() {
     const apiRequestBody = {
       "model": "gpt-3.5-turbo",
       "messages": [
-        systemMessage,
+        // systemMessage,
         ...apiMessages
       ]
     }
