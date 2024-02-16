@@ -3,7 +3,7 @@ import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react';
 import { useState } from 'react';
 
-const API_KEY = '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';
+const apiKey = process.env.REACT_APP_API_KEY;
 
 function App() {
   const [typing, setTyping] = useState(false);
@@ -36,10 +36,10 @@ function App() {
       }
     });
 
-    const systemMessage = {
-      role: "system",
-      content: "Explain all concepts like I am 10 yrs old."
-    };
+    // const systemMessage = {
+    //   role: "system",
+    //   content: "Explain all concepts like I am 10 yrs old."
+    // };
 
     const apiRequestBody = {
       "model": "gpt-3.5-turbo",
@@ -52,7 +52,7 @@ function App() {
       // mode: 'no-cors',
       method: 'POST',
       headers: {
-        "Authorization": `Bearer ${API_KEY}`,
+        "Authorization": `Bearer ${apiKey}`,
         "Content-Type": "application/json"
       },
       body: JSON.stringify(apiRequestBody)
